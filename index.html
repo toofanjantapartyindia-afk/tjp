@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tufan Janta Party (TJP) - जनता की आवाज़</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- Tiranga Theme & Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Header / Hero Section (Tiranga Gradient) --- */
+        header {
+            background: linear-gradient(135deg, #FF9933 0%, #ffffff 50%, #128807 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #000080;
+        }
+
+        .logo-badge {
+            background: #000080;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 900;
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #000080;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        header p {
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* --- Global Card Styling --- */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 6px solid #FF9933;
+        }
+
+        .card-green {
+            border-left: 6px solid #128807;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #000080;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- Video Section --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Video Actions */
+        .video-actions {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0 5px 0;
+            border-top: 1px solid #eee;
+            margin-top: 10px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        .action-btn:hover, .action-btn.active {
+            color: #000080;
+        }
+
+        .action-btn i {
+            font-size: 20px;
+        }
+
+        /* Comment Box System */
+        .comment-section {
+            margin-top: 15px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .comment-input-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .comment-input-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .comment-input-box button {
+            background: #000080;
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .comments-list {
+            max-height: 150px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+
+        .comment-item {
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* --- Join Form Section --- */
+        .join-intro {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .quiz-option {
+            background: #fdf2e9;
+            border: 1px solid #ffebda;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #d35400;
+        }
+
+        .quiz-option i {
+            font-size: 18px;
+        }
+
+        .form-group {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(to right, #FF9933, #128807);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* --- Donation Section --- */
+        .donation-text {
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .scanner-card {
+            background: #fff;
+            border: 2px dashed #000080;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .qr-wrapper {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 15px auto;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* --- Social Media Section --- */
+        .social-connect {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            border-top: 5px solid #000080;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            font-size: 28px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background: #f0f2f5;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.15);
+        }
+
+        .twitter-color { color: #1DA1F2; }
+        .instagram-color { color: #E1306C; }
+        .facebook-color { color: #1877F2; }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
+            background: #e9ecef;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo-badge">TJP</div>
+        <h1>तुफ़ान जनता पार्टी</h1>
+        <p><i class="fa-solid fa-flag"></i> जनता की आवाज़, बदलाव की आंधी <i class="fa-solid fa-flag"></i></p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Video Section -->
+        <div class="card">
+            <h2><i class="fa-solid fa-square-play" style="color: #FF9933;"></i> मुख्य संदेश और सच्चाई</h2>
+            <div class="video-container">
+                <video id="tjpVideo" controls poster="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800">
+                    <source src="tjp-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Interactivity Buttons -->
+            <div class="video-actions">
+                <button class="action-btn" id="likeBtn" onclick="toggleLike()">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <span id="likeText">लाइक (245)</span>
+                </button>
+                <button class="action-btn" onclick="focusComment()">
+                    <i class="fa-solid fa-comment"></i>
+                    <span>कमेंट</span>
+                </button>
+                <button class="action-btn" onclick="shareWebsite()">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span>शेयर करें</span>
+                </button>
+                <a href="tjp-video.mp4" download="TJP_Video.mp4" class="action-btn">
+                    <i class="fa-solid fa-circle-down"></i>
+                    <span>डाउनलोड</span>
+                </a>
+            </div>
+
+            <!-- Comment Box System -->
+            <div class="comment-section">
+                <div class="comment-input-box">
+                    <input type="text" id="commentInput" placeholder="अपनी राय यहाँ लिखें...">
+                    <button onclick="addComment()">भेजें</button>
+                </div>
+                <div class="comments-list" id="commentsList">
+                    <div class="comment-item"><strong>रमेश कुमार:</strong> अब बदलाव ज़रूरी है! जय टीजेपी।</div>
+                    <div class="comment-item"><strong>अमित सिंह:</strong> बहुत ही सच्चा संदेश भाई।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Join Form Section -->
+        <div class="card card-green" id="joinSection">
+            <h2><i class="fa-solid fa-user-plus" style="color: #128807;"></i> आज ही टीजेपी (TJP) से जुड़ें</h2>
+            <p class="join-intro">यदि आप नीचे दिए गए किसी भी हालात से परेशान हैं, तो आपका स्वागत है:</p>
+            
+            <div class="quiz-option"><i class="fa-solid fa-triangle-exclamation"></i> क्या आप बेरोज़गार हैं? तो जुड़ें!</div>
+            <div class="quiz-option"><i class="fa-solid fa-triangle-exclamation"></i> क्या आप पढ़ी-लिखी अनपढ़ व्यवस्था से तंग हैं? तो जुड़ें!</div>
+            <div class="quiz-option"><i class="fa-solid fa-triangle-exclamation"></i> क्या आप इस खोखली सरकार को मानते/झेल रहे हैं? तो जुड़ें!</div>
+            <div class="quiz-option"><i class="fa-solid fa-triangle-exclamation"></i> क्या आप आलसी और लाचार व्यवस्था को बदलना चाहते हैं? तो जुड़ें!</div>
+
+            <!-- Only Name Form -->
+            <form onsubmit="handleJoinSubmit(event)">
+                <div class="form-group">
+                    <label>आपका नाम</label>
+                    <input type="text" placeholder="अपना पूरा नाम दर्ज करें" required id="joinName">
+                </div>
+                <button type="submit" class="submit-btn">सच्चाई के साथ शामिल हों</button>
+            </form>
+        </div>
+
+        <!-- 3. Social Media IDs Section (WORKING LINKS ADDED) -->
+        <div class="social-connect">
+            <h2><i class="fa-solid fa-hashtag" style="color: #000080;"></i> हमारे सोशल मीडिया से जुड़ें</h2>
+            <p style="font-size: 14px; color: #666;">ताज़ा अपडेट्स और लाइव वीडियो देखने के लिए अभी फॉलो करें:</p>
+            <div class="social-links">
+                <!-- Twitter/X -->
+                <a href="https://x.com/IndiaTJP" target="_blank" class="social-icon twitter-color" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/tufanjantaparty?igsh=MWpxbDNubjR0YTJ6eg==" target="_blank" class="social-icon instagram-color" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <!-- Facebook Page Link 1 -->
+                <a href="https://www.facebook.com/share/1CrFZEhJJH/" target="_blank" class="social-icon facebook-color" title="Facebook Page"><i class="fa-brands fa-facebook"></i></a>
+                <!-- Facebook Profile/Group Link 2 -->
+                <a href="https://www.facebook.com/share/18kYvqDeZq/" target="_blank" class="social-icon facebook-color" title="Facebook Connect"><i class="fa-solid fa-users"></i></a>
+            </div>
+        </div>
+
+        <!-- 4. Donation Section -->
+        <div class="card">
+            <h2><i class="fa-solid fa-hand-holding-dollar" style="color: #000080;"></i> जनता के लिए सहयोग (Donation)</h2>
+            <p class="donation-text">
+                तुफ़ान जनता पार्टी किसी बड़े उद्योगपति के पैसे से नहीं, बल्कि आप जैसी आम जनता के एक-एक रुपये के सहयोग से चलती है। हर एक पैसा सीधे जनता के हक की लड़ाई, शिक्षा, और प्रशासनिक सुधारों में लगाया जाएगा। व्यवस्था बदलने के लिए अपना छोटा सा योगदान ज़रूर दें!
+            </p>
+            
+            <div class="scanner-card">
+                <div class="qr-wrapper">
+                    <img src="phonepe-qr.png" alt="PhonePe QR Code" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <strong>BIJENDER KUMAR</strong>
+                <p style="font-size: 13px; color: #666; margin-top: 5px;">Scan & Pay Using Any UPI App</p>
+                <p style="font-weight: bold; color: #128807; margin-top: 5px;">कोई न्यूनतम राशि नहीं!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 तुफ़ान जनता पार्टी (TJP). All Rights Reserved.</p>
+        <p>जनता की आवाज़, हमेशा आपके साथ।</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let liked = false;
+        function toggleLike() {
+            const likeText = document.getElementById('likeText');
+            const likeBtn = document.getElementById('likeBtn');
+            if(!liked) {
+                likeText.innerText = "लाइक किया (246)";
+                likeBtn.style.color = "#000080";
+                liked = true;
+            } else {
+                likeText.innerText = "लाइक (245)";
+                likeBtn.style.color = "#555";
+                liked = false;
+            }
+        }
+
+        function focusComment() {
+            document.getElementById('commentInput').focus();
+        }
+
+        function addComment() {
+            const input = document.getElementById('commentInput');
+            const list = document.getElementById('commentsList');
+            if(input.value.trim() !== "") {
+                const newComment = document.createElement('div');
+                newComment.className = 'comment-item';
+                newComment.innerHTML = `<strong>आप:</strong> ${input.value}`;
+                list.insertBefore(newComment, list.firstChild);
+                input.value = "";
+            } else {
+                alert("कृपया पहले कुछ लिखें!");
+            }
+        }
+
+        function shareWebsite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Tufan Janta Party',
+                    text: 'TJP - जनता की आवाज़ से जुड़ें!',
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                alert("इस वेबसाइट का लिंक कॉपी करके अपने दोस्तों को शेयर करें: " + window.location.href);
+            }
+        }
+
+        function handleJoinSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('joinName').value;
+            alert(`धन्यवाद ${name}! आप तुफ़ान जनता पार्टी (TJP) के साथ सफलतापूर्वक जुड़ चुके हैं।`);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
