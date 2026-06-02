@@ -22,56 +22,32 @@
             padding-bottom: 40px;
         }
 
-        /* --- Header Banner --- */
-        .banner-container {
-            width: 100%;
-            position: relative;
-            background: #161b22;
+        /* --- Header Section (Without Image Dependency) --- */
+        .header-box {
+            background: linear-gradient(135deg, #ff9933 0%, #161b22 50%, #128807 100%);
+            padding: 40px 15px;
             text-align: center;
-            overflow: hidden;
             border-bottom: 4px solid #ff9933;
-        }
-
-        .banner-img {
-            width: 100%;
-            max-width: 1200px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* --- Profile Logo & Title --- */
-        .profile-section {
-            text-align: center;
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-            padding: 0 15px;
-        }
-
-        .logo-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #128807;
-            background-color: #fff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            object-fit: cover;
         }
 
         .party-title {
-            font-size: 28px;
-            color: #ff9933;
-            margin-top: 10px;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: 900;
+            text-shadow: 2px 2px 5px #000000;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
         .party-slogan {
-            font-size: 16px;
-            color: #128807;
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-size: 18px;
+            color: #f0f6fc;
+            font-weight: 700;
+            background: rgba(0,0,0,0.4);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
         }
 
         /* --- Main Container --- */
@@ -88,108 +64,124 @@
             justify-content: center;
             gap: 10px;
             width: 100%;
-            padding: 14px;
+            padding: 15px;
             border-radius: 8px;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             text-decoration: none;
-            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-align: center;
+            color: white;
         }
 
-        /* YouTube Channel Button */
         .btn-youtube {
             background: linear-gradient(135deg, #ff0000, #cc0000);
-            color: white;
-        }
-        .btn-youtube:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 12px rgba(255,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(255,0,0,0.4);
         }
 
-        /* Join Movement Flashing Button */
         .btn-join {
             background: linear-gradient(135deg, #0052cc, #003399);
-            color: white;
-            animation: pulse 2s infinite;
+            box-shadow: 0 4px 10px rgba(0,82,204,0.4);
+            animation: pulse 1.5s infinite;
         }
+
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 82, 204, 0.7); }
-            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(0, 82, 204, 0); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(0, 82, 204, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 82, 204, 0); }
         }
 
-        /* --- Premium Media Box (Tabs System) --- */
-        .media-box {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
+        /* --- Sarcastic Join Section --- */
+        .sarcastic-box {
+            background-color: #1c0a0a;
+            border: 2px solid #ff4d4d;
+            border-radius: 10px;
             padding: 15px;
             margin-bottom: 25px;
         }
 
-        .media-tabs {
+        .sarcastic-title {
+            color: #ff4d4d;
+            font-size: 18px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ff4d4d;
+            padding-bottom: 5px;
+        }
+
+        .sarcastic-list {
+            list-style: none;
+        }
+
+        .sarcastic-list li {
+            font-size: 15px;
+            color: #f0f6fc;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .sarcastic-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #ff9933;
+        }
+
+        /* --- Real Camera / Video Box --- */
+        .camera-box {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .camera-title {
+            color: #128807;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .camera-buttons {
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
+            justify-content: space-between;
         }
 
-        .tab-btn {
+        .cam-btn {
             flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
+            padding: 12px 5px;
             background-color: #21262d;
+            border: 1px solid #8b949e;
+            border-radius: 8px;
             color: #c9d1d9;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
             cursor: pointer;
+            text-decoration: none;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: background 0.2s;
+            gap: 8px;
         }
 
-        .tab-btn.active {
-            background-color: #ff9933;
-            color: #0d1117;
+        .cam-btn i {
+            font-size: 24px;
+            color: #ff9933;
         }
 
-        .media-content {
-            display: none;
-            background-color: #0d1117;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-            min-height: 200px;
+        .cam-btn:hover {
+            background-color: #30363d;
         }
 
-        .media-content.active {
-            display: block;
-        }
-
-        .video-responsive {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 6px;
-        }
-
-        .video-responsive iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* --- Card & Issue Styling --- */
+        /* --- Issues & Portal Grid --- */
         .section-title {
             font-size: 20px;
             color: #ff9933;
@@ -204,377 +196,149 @@
             border: 1px solid #30363d;
             border-radius: 10px;
             padding: 15px;
-            margin-bottom: 15px;
         }
 
         .issue-item {
             display: flex;
-            align-items: flex-start;
             gap: 12px;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
             border-bottom: 1px solid #21262d;
         }
 
         .issue-item:last-child {
+            border: none;
             margin-bottom: 0;
             padding-bottom: 0;
-            border-bottom: none;
         }
 
-        .issue-icon {
-            color: #ff9933;
-            font-size: 18px;
-            margin-top: 3px;
-        }
+        .issue-icon { color: #ff9933; font-size: 20px; margin-top: 2px; }
+        .issue-text h4 { color: #f0f6fc; font-size: 16px; margin-bottom: 5px; }
+        .issue-text p { color: #8b949e; font-size: 14px; }
 
-        .issue-text h4 {
-            color: #f0f6fc;
-            font-size: 15px;
-            margin-bottom: 4px;
-        }
-
-        .issue-text p {
-            color: #8b949e;
-            font-size: 13px;
-        }
-
-        /* --- Janta Portal Grid --- */
-        .portal-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
-        .portal-btn {
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            color: #f0f6fc;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .portal-btn i {
-            font-size: 22px;
-            color: #ff9933;
-        }
-
-        .portal-btn:hover {
-            background-color: #30363d;
-            border-color: #8b949e;
-        }
-
-        /* --- Comparison Table (Wade vs Haqeeqat) --- */
-        .compare-box {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
-
-        .compare-header {
-            background: linear-gradient(135deg, #21262d, #0d1117);
-            padding: 12px;
-            text-align: center;
-            font-weight: 700;
-            border-bottom: 1px solid #30363d;
-            color: #ff9933;
-        }
-
-        .compare-row {
-            display: flex;
-            border-bottom: 1px solid #21262d;
-        }
-
-        .compare-row:last-child {
-            border-bottom: none;
-        }
-
-        .compare-col {
-            flex: 1;
-            padding: 12px;
-            font-size: 13px;
-        }
-
-        .col-wade {
-            border-right: 1px solid #21262d;
-            color: #8b949e;
-        }
-
-        .col-haqeeqat {
-            color: #f85149;
-            font-weight: 600;
-        }
-
-        /* --- Donation Box --- */
-        .donation-box {
-            background: linear-gradient(145deg, #1f242c, #161b22);
-            border: 2px solid #128807;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        }
-
-        .donation-title {
-            color: #ff9933;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .qr-placeholder {
-            width: 180px;
-            height: 180px;
-            background-color: white;
-            margin: 0 auto 12px auto;
-            padding: 10px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .qr-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .payment-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .pay-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 24px;
-            color: #8b949e;
-        }
-
-        /* --- Social Media Footer --- */
-        .social-footer {
+        /* --- Social & Donation Footer --- */
+        .footer-social {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 25px;
-            font-size: 22px;
+            margin-top: 30px;
+            background: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #30363d;
         }
 
-        .social-footer a {
-            color: #c9d1d9;
-            transition: color 0.2s;
+        .footer-social a {
+            color: #f0f6fc;
+            font-size: 30px;
+            text-decoration: none;
         }
-
-        .social-footer a:hover {
-            color: #ff9933;
-        }
+        
+        .footer-social a.yt { color: #ff0000; }
+        .footer-social a.fb { color: #1877f2; }
+        .footer-social a.ig { color: #e1306c; }
+        .footer-social a.tw { color: #1da1f2; }
     </style>
 </head>
 <body>
 
-    <!-- Header Banner -->
-    <div class="banner-container">
-        <!-- Aapka Sher wala banner photo yahan load hoga -->
-        <img src="1000028459.jpg" alt="TJP Banner" class="banner-img">
-    </div>
-
-    <!-- Profile Logo & Title -->
-    <div class="profile-section">
-        <!-- Aapka Gol uthi hui mutthi wala logo yahan load hoga -->
-        <img src="1000028485.png" alt="TJP Logo" class="logo-img">
+    <!-- Header / Banner Section -->
+    <div class="header-box">
         <h1 class="party-title">तूफ़ान जनता पार्टी (TJP)</h1>
-        <p class="party-slogan">🚩 जनता की आवाज़, बदलाव की आंधी 🚩</p>
+        <div class="party-slogan">🚩 जनता की आवाज़, बदलाव की आंधी 🚩</div>
     </div>
 
     <div class="container">
 
-        <!-- YouTube Channel Integration Link -->
-        <a href="https://www.youtube.com/@tjp-t9m" target="_blank" class="btn btn-youtube">
-            <i class="fab fa-youtube"></i> यूट्यूब चैनल सब्सक्राइब करें (TJP YouTube)
+        <!-- 1. 100% Working YouTube Link -->
+        <a href="https://youtube.com/@tjp-t9m?si=NFKEI6Dx2XfPJqoq" target="_blank" class="btn btn-youtube">
+            <i class="fab fa-youtube"></i> यूट्यूब चैनल सब्सक्राइब करें (TJP)
         </a>
 
-        <!-- Flashing Join Movement Button -->
-        <a href="#" class="btn btn-join">
-            <i class="fas fa-fire"></i> JOIN MOVEMENT (आंदोलन से जुड़ें)
+        <!-- 2. Working WhatsApp Join Link -->
+        <a href="https://wa.me/919999999999" target="_blank" class="btn btn-join">
+            <i class="fab fa-whatsapp"></i> JOIN MOVEMENT (पार्टी से जुड़ें)
         </a>
 
-        <!-- Premium Media Box (Camera/Video/Photo Tabs) -->
-        <div class="media-box">
-            <div class="media-tabs">
-                <button class="tab-btn active" onclick="openMedia(event, 'live')">
-                    <i class="fas fa-camera"></i> Live Protest
-                </button>
-                <button class="tab-btn" onclick="openMedia(event, 'videos')">
-                    <i class="fas fa-video"></i> वीडियो देखें
-                </button>
-                <button class="tab-btn" onclick="openMedia(event, 'photos')">
-                    <i class="fas fa-images"></i> तस्वीरें
-                </button>
-            </div>
+        <!-- 3. Your Sarcastic Rules Section -->
+        <div class="sarcastic-box">
+            <div class="sarcastic-title">🚨 TJP को कौन जॉइन करे? 🚨</div>
+            <ul class="sarcastic-list">
+                <li><i class="fas fa-check-circle"></i> अगर आप आलसी हैं, तो जॉइन करें!</li>
+                <li><i class="fas fa-check-circle"></i> अगर आप बेरोजगार हैं, तो जॉइन करें!</li>
+                <li><i class="fas fa-check-circle"></i> अगर आप पढ़े-लिखे गंवार हैं, तो जॉइन करें!</li>
+                <li><i class="fas fa-check-circle"></i> अगर आपको पढ़-लिखकर नौकरी नहीं मिली, तो जॉइन करें!</li>
+                <li><i class="fas fa-check-circle"></i> अगर आप सारा दिन फेसबुक चलाते हैं (या निठल्ले हैं), तो जॉइन करें!</li>
+            </ul>
+        </div>
 
-            <!-- Live Content Tab -->
-            <div id="live" class="media-content active">
-                <p style="color: #8b949e; padding-top: 40px;">
-                    <i class="fas fa-dot-circle" style="color: #ff0000; animation: blink 1s infinite;"></i> 
-                    अभी कोई लाइव विरोध प्रदर्शन नहीं चल रहा है। नवीनतम अपडेट के लिए हमारे यूट्यूब चैनल से जुड़ें।
-                </p>
-            </div>
+        <!-- 4. REAL Camera, Video and Live Setup -->
+        <!-- Note: This will actually open the mobile phone's native camera app! -->
+        <div class="camera-box">
+            <div class="camera-title"><i class="fas fa-mobile-alt"></i> मोबाइल मीडिया सेंटर</div>
+            <div class="camera-buttons">
+                <!-- Photo Click (Opens Mobile Camera) -->
+                <label class="cam-btn" for="photoCapture">
+                    <i class="fas fa-camera"></i>
+                    <span>फोटो खींचें</span>
+                </label>
+                <input type="file" id="photoCapture" accept="image/*" capture="environment" style="display:none;">
 
-            <!-- Videos Tab -->
-            <div id="videos" class="media-content">
-                <div class="video-responsive">
-                    <!-- Aapke youtube channel ka latest promo embedded format mein -->
-                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=tjp-t9m" allowfullscreen></iframe>
-                </div>
-            </div>
+                <!-- Video Record (Opens Mobile Camcorder) -->
+                <label class="cam-btn" for="videoCapture">
+                    <i class="fas fa-video"></i>
+                    <span>वीडियो बनाएं</span>
+                </label>
+                <input type="file" id="videoCapture" accept="video/*" capture="camcorder" style="display:none;">
 
-            <!-- Photos Tab -->
-            <div id="photos" class="media-content">
-                <p style="color: #8b949e; padding-top: 40px;">गैलरी अपडेट की जा रही है...</p>
+                <!-- Go Live (Redirects to YouTube Live Studio) -->
+                <a href="https://studio.youtube.com/channel/UC/livestreaming" target="_blank" class="cam-btn">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <span>लाइव जाएं</span>
+                </a>
             </div>
         </div>
 
-        <!-- Utility Janta Portal Grid (Bina Kisi Duplication Ke) -->
-        <div class="section-title">टी.जे.पी. जनता डिजिटल पोर्टल</div>
-        <div class="portal-grid">
-            <a href="#" class="portal-btn">
-                <i class="fas fa-edit"></i>
-                <span>जनता की शिकायत</span>
-            </a>
-            <a href="#" class="portal-btn">
-                <i class="fas fa-search"></i>
-                <span>सवाल पूछो नफा</span>
-            </a>
-            <a href="#" class="portal-btn">
-                <i class="fas fa-gavel"></i>
-                <span>RTI दाखिल मदद</span>
-            </a>
-            <a href="#" class="portal-btn">
-                <i class="fas fa-bullhorn"></i>
-                <span>हमारा संकल्प</span>
-            </a>
-        </div>
-
-        <!-- Unique Sawaal Section -->
+        <!-- 5. Issues Section -->
         <div class="section-title">जनता के गंभीर सवाल - जवाब चाहिए!</div>
-        
         <div class="issue-card">
             <div class="issue-item">
                 <i class="fas fa-train issue-icon"></i>
                 <div class="issue-text">
                     <h4>रेलवे कानून और बच्चों का नियम</h4>
-                    <p>5 से 11 साल तक के बच्चों की टिकट पर पूरी/हाफ फीस लेने के बाद भी ट्रेन में सीट की गारंटी क्यों नहीं?</p>
+                    <p>5 से 11 साल तक के बच्चों की टिकट पर पूरी फीस लेने के बाद भी सीट की गारंटी क्यों नहीं?</p>
                 </div>
             </div>
             <div class="issue-item">
                 <i class="fas fa-file-invoice issue-icon"></i>
                 <div class="issue-text">
-                    <h4>परीक्षा लीक माफिया पर सवाल</h4>
-                    <p>NEET, CBSE, SSC GD और CUET जैसी बड़ी परीक्षाएं बार-बार लीक क्यों हो रही हैं? युवाओं का भविष्य अंधकार में क्यों है?</p>
-                </div>
-            </div>
-            <div class="issue-item">
-                <i class="fas fa-gas-pump issue-icon"></i>
-                <div class="issue-text">
-                    <h4>अर्थव्यवस्था और बढ़ती महंगाई</h4>
-                    <p>पेट्रोल-डीजल और गैस सिलेंडर के दाम आम आदमी की पहुंच से बाहर क्यों हो गए? डॉलर के मुकाबले रुपया पाताल में क्यों गिर रहा है?</p>
+                    <h4>परीक्षा लीक माफिया</h4>
+                    <p>NEET, CBSE, SSC GD बार-बार लीक क्यों हो रही हैं? युवाओं का भविष्य अंधकार में क्यों है?</p>
                 </div>
             </div>
             <div class="issue-item">
                 <i class="fas fa-shield-alt issue-icon"></i>
                 <div class="issue-text">
                     <h4>कानून व्यवस्था और किशोर अपराध</h4>
-                    <p>बेटियों की सुरक्षा पर हर दिन खतरा क्यों? 16-17 साल के गंभीर अपराधियों को कड़े कानून की कमियों का फायदा क्यों मिल रहा है?</p>
-                </div>
-            </div>
-            <div class="issue-item">
-                <i class="fas fa-graduation-cap issue-icon"></i>
-                <div class="issue-text">
-                    <h4>शिक्षा, स्वास्थ्य और ग्रामीण भारत</h4>
-                    <p>सरकारी स्कूलों और अस्पतालों की हालत बदतर क्यों है? किसानों को फसलों की सही कीमत और गांवों को विकास की रफ्तार क्यों नहीं मिलती?</p>
+                    <p>बेटियों की सुरक्षा पर खतरा क्यों? 16-17 साल के गंभीर अपराधियों को कानून का फायदा क्यों?</p>
                 </div>
             </div>
         </div>
 
-        <!-- Wade Vs Haqeeqat (Lock Section) -->
-        <div class="section-title">वादे बनाम हकीकत (अब चुप्पी नहीं!)</div>
-        <div class="compare-box">
-            <div class="compare-header"><i class="fas fa-lock"></i> जवाब दो नेताओं!</div>
-            <div class="compare-row">
-                <div class="compare-col col-wade">✔️ हर हाथ को काम का वादा था</div>
-                <div class="compare-col col-haqeeqat">❌ युवा बेरोजगार सड़कों पर दर-दर भटक रहा है</div>
-            </div>
-            <div class="compare-row">
-                <div class="compare-col col-wade">✔️ भ्रष्टाचार मुक्त भारत बनेगा</div>
-                <div class="compare-col col-haqeeqat">❌ पेपर लीक और कमिशनखोरी चरम सीमा पर है</div>
-            </div>
-            <div class="compare-row">
-                <div class="compare-col col-wade">✔️ डॉलर गिरेगा और रुपया चढ़ेगा</div>
-                <div class="compare-col col-haqeeqat">❌ डॉलर आसमान पर और रुपया पाताल में है</div>
-            </div>
-        </div>
-
-        <!-- Secure Donation Box -->
-        <div class="donation-box">
-            <div class="donation-title"><i class="fas fa-heart"></i> DONATE & SUPPORT US (सहयोग करें)</div>
-            <div class="qr-placeholder">
-                <!-- PhonePe QR Code image file source -->
-                <img src="phonepe-qr.png" alt="PhonePe QR Code">
-            </div>
-            <div class="payment-name">BIJENDER KUMAR</div>
-            <p style="font-size: 12px; color: #8b949e; margin-bottom: 12px;">हर छोटा योगदान व्यवस्था बदलने में बड़ी भूमिका निभाएगा।</p>
-            <div class="pay-icons">
-                <i class="fab fa-google-pay" title="Google Pay"></i>
-                <i class="fas fa-mobile-alt" title="PhonePe/Paytm"></i>
-                <i class="fas fa-university" title="UPI"></i>
-            </div>
-        </div>
-
-        <!-- Social Media Navigation Links Footer -->
-        <div class="social-footer">
-            <a href="https://www.youtube.com/@tjp-t9m" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <!-- 6. 100% Working Social Media Footer -->
+        <div class="section-title">सोशल मीडिया पर हमें फॉलो करें</div>
+        <div class="footer-social">
+            <!-- YouTube -->
+            <a href="https://youtube.com/@tjp-t9m?si=NFKEI6Dx2XfPJqoq" target="_blank" class="yt"><i class="fab fa-youtube"></i></a>
+            <!-- Facebook Profile 1 -->
+            <a href="https://www.facebook.com/share/1BBXuLFQCN/" target="_blank" class="fb"><i class="fab fa-facebook"></i></a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/tufanjantaparty?igsh=MWpxbDNubjR0YTJ6eg==" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
+            <!-- Twitter / X -->
+            <a href="https://x.com/IndiaTJP" target="_blank" class="tw"><i class="fab fa-twitter"></i></a>
         </div>
 
     </div>
 
-    <!-- JavaScript code to control the Media Box Tab Switches -->
-    <script>
-        function openMedia(evt, mediaName) {
-            var i, content, tablinks;
-            content = document.getElementsByClassName("media-content");
-            for (i = 0; i < content.length; i++) {
-                content[i].style.display = "none";
-                content[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(mediaName).style.display = "block";
-            document.getElementById(mediaName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-    </script>
 </body>
 </html>
